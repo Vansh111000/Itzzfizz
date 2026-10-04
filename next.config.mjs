@@ -12,6 +12,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  dynamicParams: false,
   turbopack: {
     root: __dirname,
   },
