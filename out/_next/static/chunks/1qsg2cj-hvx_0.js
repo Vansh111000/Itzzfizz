@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,18815,t=>{t.q("/_next/static/media/McLaren 720S 2022 top view.06mf7ojfjil35.png")}]);

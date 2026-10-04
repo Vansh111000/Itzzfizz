@@ -2,11 +2,13 @@
   "name": "scroll-driven-hero",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vansh111000.github.io/Itzzfizz/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy":"npm run build && gh-pages -d out"
   },
   "dependencies": {
     "gsap": "^3.15.0",
