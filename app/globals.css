@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0c;
+  --foreground: #f5f5f5;
+  --accent: #7dd3fc;
+  --accent-warm: #fca5a5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-warm: var(--accent-warm);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  /* Deliberately no overflow-x here: setting a non-"visible" overflow on
+     <body> forces the browser to treat it as its own scroll container,
+     which breaks position: sticky (used by the pinned hero panel) and
+     desyncs it from ScrollTrigger's window-scroll tracking. Horizontal
+     overflow is instead prevented by sizing individual elements. */
+}
+
+/* Soft ambient glow used behind the hero visual. Kept as a plain radial
+   gradient (paint-only) so it costs nothing during scroll animation. */
+.ambient-glow {
+  background: radial-gradient(
+      circle at 50% 35%,
+      color-mix(in srgb, var(--accent) 18%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      color-mix(in srgb, var(--accent-warm) 12%, transparent) 0%,
+      transparent 55%
+    );
+}
+
+/* Respect the user's OS-level motion preference. Elements marked with
+   this class are revealed instantly and any scroll-scrubbed motion is
+   short-circuited in JS via matchMedia('(prefers-reduced-motion: reduce)'). */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}

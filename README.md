@@ -137,5 +137,4 @@ Edit `app/globals.css`:
 
 ---
 
-**Built with ❤️ using GSAP ScrollTrigger**
 # Itzzfizz
